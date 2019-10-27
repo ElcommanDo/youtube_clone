@@ -1,0 +1,23 @@
+{%extends 'tube/base.html'%}
+{%block title%}
+Home
+{%endblock%}
+
+{%block content%}
+   <h1>Welcome in Youtube Django Clone </h1>
+<div class="border mt-3 raw">
+      {%for video in most_recent_videos%}
+   <div class="card mb-3 col-md-4 mb-2"  style="float:left ;height:500;" >
+     <a href="{%url 'video_view' video.id %}"><img class="card-img-top" src="{{video.thumb.url}}" height="280px" alt="Card image cap"></a>
+     <div class="card-body">
+       <h5 class="card-title">{{video.title}}</h5>
+       <p class="card-text">{{video.description}}</p>
+       <p class="card-text"><small class="text-muted">created at {{video.datetime}}</small></p>
+     </div>
+
+  </div>
+      {%empty%}
+   <h1 style="color:red">there is No videos yet</h1>
+     {%endfor%}
+    </div>
+{%endblock%}

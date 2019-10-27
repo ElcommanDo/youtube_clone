@@ -1,0 +1,14 @@
+{%extends 'tube/base.html'%}
+{%block title%}Register Now{%endblock%}
+{%block content%}
+{%load crispy_forms_tags%}
+<div class="center col-md-4 border">
+<form class="mt-5" method="post">
+    {%csrf_token%}
+    {{RegisterForm|crispy}}
+    <input class="btn btn-success" type="submit" value="Register Now">
+
+
+</form>
+    </div>
+{%endblock%}

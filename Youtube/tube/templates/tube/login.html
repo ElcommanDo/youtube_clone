@@ -1,0 +1,17 @@
+{%extends 'tube/base.html'%}
+{%block title%}Login Now{%endblock%}
+{%load crispy_forms_tags%}
+{%block content%}
+<div class="center col-md-6 border">
+
+
+
+<form class="mt-5" method="post">
+    {%csrf_token%}
+    {{LoginForm|crispy}}
+    <input class="btn btn-success" type="submit" value="Login">
+
+
+</form>
+</div>
+    {%endblock%}
